@@ -6,12 +6,12 @@ import { format, parseISO } from "date-fns";
 import Infocard from "../components/Infocard";
 
 function search({ searchResults }) {
-  const router = useRouter();
-  const { location, startDate, endDate, noOfGuests } = router.query;
+  const route = useRouter();
+  const { location, startDate, endDate, noOfGuests } = route.query;
   const formattedStartDate = parseISO(startDate)
   const formattedEndDate = parseISO(endDate)
   const range = `${formattedStartDate} - ${formattedEndDate}`
-  console.log(formattedStartDate)
+
   return (
     <div>
       <Header placeholder={`${location} | ${noOfGuests} guests`} />
