@@ -5,9 +5,9 @@ import { useRouter } from "next/router";
 import { format, parseISO } from "date-fns";
 import Infocard from "../components/Infocard";
 
-function search({ searchResults }) {
-  const route = useRouter();
-  const { location, startDate, endDate, noOfGuests } = route.query;
+function Search({ searchResults }) {
+  const router = useRouter();
+  const { location, startDate, endDate, noOfGuests } = router.query;
   const formattedStartDate = parseISO(startDate)
   const formattedEndDate = parseISO(endDate)
   const range = `${formattedStartDate} - ${formattedEndDate}`
@@ -49,7 +49,7 @@ function search({ searchResults }) {
   );
 }
 
-export default search;
+export default Search;
 
 export async function getStaticProps() {
   const searchResults = await fetch("https://www.jsonkeeper.com/b/5NPS").then(
