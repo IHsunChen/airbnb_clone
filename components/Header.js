@@ -124,9 +124,10 @@ function Header({placeholder}) {
             minDate={new Date()}
             rangeColors={["#FD5B61"]}
             onChange={handleSelect}
+            className=""
           />
           <div className="flex items-center border-b mb-4">
-            <h2 className="text-2xl flex-grow font-semibold">
+            <h2 className="text-lg md:text-xl lg:text-2xl flex-grow font-semibold">
               Number of Guests
             </h2>
             <svg

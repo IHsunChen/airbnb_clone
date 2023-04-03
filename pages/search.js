@@ -5,6 +5,8 @@ import { useRouter } from "next/router";
 import { format, parseISO } from "date-fns";
 import Infocard from "../components/Infocard";
 
+import MapBox from "../components/MapBox";
+
 function Search({ searchResults }) {
   const router = useRouter();
   const { location, startDate, endDate, noOfGuests } = router.query;
@@ -42,6 +44,9 @@ function Search({ searchResults }) {
               />
             ))}
           </div>
+        </section>
+        <section className="hidden xl:inline-flex xl:min-w-[800px]">
+          <MapBox searchResults={searchResults}/>
         </section>
       </main>
       <Footer />
