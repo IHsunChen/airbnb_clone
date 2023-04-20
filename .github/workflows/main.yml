@@ -16,16 +16,14 @@ jobs:
           node-version: 16
       - name: Install dependencies
         run: |
-          cd client
           npm install
       - name: Generate build
         run: |
-          cd client
           npm run build
       # Share artifact inside workflow
       - name: Share artifact inside workflow
         uses: actions/upload-artifact@v1
         with:
-          name: react-github-actions-build
-          path: client/build
+          name: next-github-actions-build
+          path: build
        
