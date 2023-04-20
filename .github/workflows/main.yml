@@ -1,0 +1,17 @@
+name: Test env
+
+on:
+  push:
+    branches: [main]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v3
+      - name: Use node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+       
