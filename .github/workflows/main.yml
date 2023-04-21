@@ -41,5 +41,6 @@ jobs:
           passphrase: ${{ secrets.TEST_PASSPHRASE }}
           password: ${{ secrets.TEST_PASSWORD }}
           script: |
+            pwd
             
        
