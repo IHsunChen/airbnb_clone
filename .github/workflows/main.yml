@@ -26,4 +26,18 @@ jobs:
         with:
           name: next-github-actions-build
           path: .next
+          
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploying the app
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.TEST_HOST }}
+          username: ${{ secrets.TEST_USERNAME }}
+          port: ${{ secrets.TEST_PORT }}
+          key: ${{ secrets.TEST_KEY }}
+          script: |
+            git clone https://github.com/IHsunChen/airbnb_clone.git
        
