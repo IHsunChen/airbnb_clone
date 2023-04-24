@@ -37,8 +37,6 @@ jobs:
           host: ${{ secrets.TEST_HOST }}
           username: ${{ secrets.TEST_USERNAME }}
           port: ${{ secrets.TEST_PORT }}
-          key: ${{ secrets.TEST_KEY }}
-          passphrase: ${{ secrets.TEST_PASSPHRASE }}
           password: ${{ secrets.TEST_PASSWORD }}
           script: |
             git clone https://github.com/IHsunChen/airbnb_clone.git
